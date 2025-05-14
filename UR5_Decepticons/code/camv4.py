@@ -27,9 +27,9 @@ class CameraController:
         
         # Initialize plot figure
         self.fig, self.ax = plt.subplots(figsize=(8, 4))
-        self.ax.set_xlabel('Time (s)', fontsize=24)
-        self.ax.set_ylabel('RGB Intensity', fontsize=24)
-        self.ax.set_title('Live RGB Intensity Plot', fontsize=32)
+        self.ax.set_xlabel('Time (s)', fontsize=16)
+        self.ax.set_ylabel('RGB Intensity', fontsize=16)
+        self.ax.set_title('Live RGB Intensity Plot', fontsize=20)
         self.ax.grid(False)
         self.line_r, = self.ax.plot([], [], color='#E69F00', marker='o', markersize=6, linestyle='-', label='Red')
         self.line_g, = self.ax.plot([], [], color='#009E73', marker='^', markersize=6, linestyle='-', label='Green')
