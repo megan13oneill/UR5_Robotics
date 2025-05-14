@@ -5,7 +5,7 @@ from datetime import datetime
 
 def plotter():
     # File path setup
-    csv_file = "RGB_values5.csv"
+    csv_file = "RGB_values.csv"
     current_dir = os.path.dirname(os.path.abspath(__file__))
     data_dir = os.path.join(current_dir, 'data')
     file_path = os.path.join(data_dir, csv_file)
@@ -41,15 +41,16 @@ def plotter():
             plt.figure(figsize=(12, 8))  # Slightly larger figure
         
             # Plot RGB values with different markers
-            plt.plot(group['Time'], group['R'], 'r-', label='Red', marker='o', markersize=6)
-            plt.plot(group['Time'], group['G'], 'g-', label='Green', marker='o', markersize=6)
-            plt.plot(group['Time'], group['B'], 'b-', label='Blue', marker='o', markersize=6)
+            plt.plot(group['Time'], group['R'], color='#E69F00', marker='o', markersize=4, linestyle='-', label='Red')
+            plt.plot(group['Time'], group['G'], color='#009E73', marker='^', markersize=4, linestyle='-', label='Green')
+            plt.plot(group['Time'], group['B'], color='#56B4E9', marker='s', markersize=4, linestyle='-', label='Blue')
         
             # Customize plot
             plt.title(f'RGB Values Over Time for Sample ID: {sample_id}', fontsize=16, pad=20)
-            plt.xlabel('Time', fontsize=14)
-            plt.ylabel('Color Value (0-255)', fontsize=14)
-            plt.legend(fontsize=12, loc='upper right')
+            plt.xlabel('Time (hr:min:sec)', fontsize=16)
+            plt.ylabel('Color Value (0-255)', fontsize=16)
+            plt.legends(fontsize=16, loc='center left', bbox_to_anchor=(1.02, 0.5), borderaxespad=0., handlelength=3)
+            plt.legend(rect=[0, 0, 0.85, 1])
             plt.grid(True, linestyle='--', alpha=0.6)
         
             # Format x-axis
