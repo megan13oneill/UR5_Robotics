@@ -51,7 +51,7 @@ def plotter():
             plt.ylabel('Color Value (0-255)', fontsize=16)
             plt.legend(fontsize=16, loc='center left', bbox_to_anchor=(1.02, 0.5), borderaxespad=0., handlelength=3)
             plt.legend(rect=[0, 0, 0.85, 1])
-            plt.grid(True, linestyle='--', alpha=0.6)
+            plt.grid(False)
         
             # Format x-axis
             plt.xticks(rotation=45, ha='right')
