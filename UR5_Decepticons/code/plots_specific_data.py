@@ -10,7 +10,7 @@ def GraphPlotter():
 
     os.makedirs(output_dir, exist_ok=True)
     df = pd.read_csv(csv_file)
-    df['Date'] = pd.to_datetime(df['Date'])
+    df['Date'] = pd.to_datetime(df['Date'], errors='coerce')
 
 if ""
 
