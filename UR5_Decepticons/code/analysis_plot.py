@@ -5,7 +5,7 @@ from datetime import datetime
 
 def plotter():
     # File path setup
-    csv_file = "RGB_values.csv"
+    csv_file = "RGB_values5.csv"
     current_dir = os.path.dirname(os.path.abspath(__file__))
     data_dir = os.path.join(current_dir, 'data')
     file_path = os.path.join(data_dir, csv_file)
