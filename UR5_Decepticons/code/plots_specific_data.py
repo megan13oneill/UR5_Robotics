@@ -3,61 +3,32 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from datetime import datetime
 
-def GraphPlotter():
-    """ will take values from csv and plot them. e.g. sample 1 colour intensity over time."""
-    csv_file = "RGV_values.csv"
-    output_dir = "graphs_outputted"
 
-    os.makedirs(output_dir, exist_ok=True)
-    df = pd.read_csv(csv_file)
-    df['Date'] = pd.to_datetime(df['Date'], errors='coerce')
-
-if ""
+# 14.5.25 - 15:56
+# 15.5.25 - 13.23.05 - row 3127
+# 15.5.25 - 13:35:42, row 3238
 
 
+# === Load CSV ===
+df = pd.read_csv('RGB_values.csv')
 
+# === Select Rows from 10 to 25 ===
+selected_rows = df.iloc[10:26]
 
+# === Plot Each Selected Row ===
+for idx, row in selected_rows.iterrows():
+    sample_id = row['Sample ID']
     
+    # Assuming all columns except 'Sample ID' and 'Time' are values
+    value_columns = [col for col in df.columns if col not in ['Sample ID', 'Time']]
 
-
-
-# Simulate multiple iterations: Let's say you're grouping by some column like 'Category'
-# For this example, assume your CSV has: Date, Value, Category
-
-if 'Category' in df.columns:
-    grouped = df.groupby('Category')
-    for category, group_df in grouped:
-        plt.figure(figsize=(10, 6))
-        plt.plot(group_df['Date'], group_df['Value'], marker='o', linestyle='-')
-        plt.title(f'Value over Time - {category}')
-        plt.xlabel('Date')
-        plt.ylabel('Value')
-        plt.grid(True)
-        plt.tight_layout()
-
-        # Create a safe filename
-        filename = f"{category.replace(' ', '_')}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.png"
-        filepath = os.path.join(output_dir, filename)
-        plt.savefig(filepath)
-        print(f"Saved: {filepath}")
-        plt.close()
-else:
-    # If no grouping, just plot once
-    plt.figure(figsize=(10, 6))
-    plt.plot(df['Date'], df['Value'], marker='o', linestyle='-')
-    plt.title('Value over Time')
-    plt.xlabel('Date')
+    plt.figure(figsize=(6, 4))
+    plt.plot(value_columns, row[value_columns].values, marker='o')
+    plt.title(f'Sample ID: {sample_id} (Row {idx})')
+    plt.xlabel('Measurement')
     plt.ylabel('Value')
     plt.grid(True)
     plt.tight_layout()
-
-    filename = f"plot_{datetime.now().strftime('%Y%m%d_%H%M%S')}.png"
-    filepath = os.path.join(output_dir, filename)
-    plt.savefig(filepath)
-    print(f"Saved: {filepath}")
-    plt.close()
-
-
-
-
+    plt.savefig(f'plot_row_{idx}_sample_{sample_id}.png')
+    plt.show()
 
