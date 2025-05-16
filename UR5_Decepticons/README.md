@@ -36,7 +36,7 @@ To contribute to the Decepticons Project, you'll need to use Git. Here are some 
  - Open a terminal or vs code in your working directory and run the following code to clone the folder
    
    ```bash
-   git clone https://github.com/megan13oneill/UR5_Robotics/tree/main/UR5_Decepticons
+   git clone https://github.com/megan13oneill/UR5_Robotics
    ```
    
 2. **Checkout or Create a Branch**
