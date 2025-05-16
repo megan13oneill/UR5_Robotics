@@ -47,15 +47,7 @@ To contribute to the Decepticons Project, you'll need to use Git. Here are some 
    ```bash
    git checkout Megatron
    ```
-   ```bash
-   git checkout Soundwave
-   ```
-   ```bash
-   git checkout Starscream
-   ```
-   ```bash
-   git checkout Skywarp
-   ```
+   
 3. **Pull the latest update from main**
 
  - to make sure that your brnach is up to date with any changes to main before and after you work
@@ -134,7 +126,6 @@ This project is licensed under the GNU General Public License (GPL). See the LIC
 ---
 
 ***Contact and support***
-Harry **Shockwave** has nothing better to do and is always at your service at h.cheung10@liv.ac.uk.
+For any issues, or queries please email psmoneil@liverpool.ac.uk
 
-For complaint please seek Megan.oneil@totoallyRealemailaddress.biz
 
